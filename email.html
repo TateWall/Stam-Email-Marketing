@@ -89,8 +89,9 @@
     .email-footer { background: var(--cocoa); color: #fff7ec; text-align: center; padding: 30px 24px 24px; }
     .email-footer .wordmark { font-size: 1.35rem; }
     .tagline { color: #e6c99b; font: italic 1rem var(--serif); margin: 8px 0 18px; }
-    .socials { display: flex; justify-content: center; gap: 18px; margin: 14px 0; }
+    .socials { display: flex; align-items: center; justify-content: center; gap: 18px; margin: 14px 0; }
     .socials a { color: white; font-size: .82rem; text-decoration: none; border-bottom: 1px solid #b98f73; }
+    .brand-logo { height: 42px; width: auto; flex-shrink: 0; }
     .contact, .footer-links { font-size: .78rem; color: #e8d9cf; }
     .footer-links { margin: 16px 0 0; }
     .footer-links a { color: white; margin: 0 7px; }
@@ -103,6 +104,8 @@
       .mail-meta, .email-content { padding-left: 20px; padding-right: 20px; }
       .topbar { padding-left: 5%; padding-right: 5%; }
       .topbar .nav-link { font-size: .78rem; }
+      .socials { gap: 10px; }
+      .brand-logo { height: 34px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
   </style>
@@ -212,9 +215,10 @@
           <div class="wordmark">Chocolaterie Stam<small>Ames, Iowa</small></div>
           <p class="tagline">A little luxury in every moment.</p>
           <div class="socials" aria-label="Social media links">
+            <img class="brand-logo" src="stams-logo.png" alt="Chocolaterie Stam">
             <a href="https://www.instagram.com/chocolateriestamames/?hl=en/" target="_blank" rel="noopener">Instagram</a>
             <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
-            <a href="https://www.facebook.com/amesstam/ target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.facebook.com/amesstam/" target="_blank" rel="noopener">Facebook</a>
           </div>
           <p class="contact">230 Main St, Ames, IA 50010<br>Need help? Come visit the store or call us at <a href="tel:+15152320656">(515) 232-0656</a> during our standard business hours.</p>
           <p class="footer-links"><a href="#privacy">Privacy Policy</a> · <a href="#share">Share with a friend to earn rewards even faster.</a> · <a href="#unsubscribe">Unsubscribe</a></p>
@@ -231,12 +235,7 @@
     const signupForm = document.getElementById('signup-form');
     const signupStatus = document.getElementById('signup-status');
     signupForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      if (!signupForm.reportValidity()) return;
-      const firstName = document.getElementById('first-name').value.trim();
-      signupStatus.textContent = `Thanks${firstName ? `, ${firstName}` : ''}! Please check your inbox for a confirmation email. Your subscription is complete only after you confirm.`;
-      signupStatus.classList.add('show');
-      signupForm.reset();
+      event.preventEvent();
     });
   </script>
 </body>
