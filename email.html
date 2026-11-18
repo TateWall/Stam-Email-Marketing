@@ -57,6 +57,7 @@
     .section-title { margin: 0 0 15px; color: var(--chocolate-dark); font-size: clamp(32px, 5vw, 50px); font-weight: 900; }
     .section-description { max-width: 730px; margin: 0 auto 42px; color: var(--muted); font-size: 17px; line-height: 1.7; }
     .strategy-section { background: #54372d; color: #fffaf3; }
+    .strategy-section .eyebrow { color: #fff; }
     .strategy-section .section-title { color: #f3c84d; }
     .strategy-section .section-description { color: #fff4e8; }
     .groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; text-align: left; }
@@ -239,7 +240,7 @@
     const signupForm = document.getElementById('signup-form');
     const signupStatus = document.getElementById('signup-status');
     signupForm.addEventListener('submit', (event) => {
-      event.preventEvent();
+      event.preventDefault();
       if (!signupForm.reportValidity()) return;
       const firstName = document.getElementById('first-name').value.trim();
       signupStatus.textContent = firstName
