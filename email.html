@@ -56,17 +56,17 @@
     .section { padding: 85px 20px; text-align: center; }
     .section-title { margin: 0 0 15px; color: var(--chocolate-dark); font-size: clamp(32px, 5vw, 50px); font-weight: 900; }
     .section-description { max-width: 730px; margin: 0 auto 42px; color: var(--muted); font-size: 17px; line-height: 1.7; }
-    .strategy-section { background: var(--chocolate-dark); color: var(--white); }
-    .strategy-section .section-title { color: var(--gold); }
-    .strategy-section .section-description { color: #f3e5dc; }
+    .strategy-section { background: #54372d; color: #fffaf3; }
+    .strategy-section .section-title { color: #f3c84d; }
+    .strategy-section .section-description { color: #fff4e8; }
     .groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; text-align: left; }
-    .group-card { padding: 30px 24px; border: 1px solid #6b4334; border-radius: 15px; background: var(--chocolate-light); }
-    .group-number { color: var(--gold); font: 900 13px var(--sans); letter-spacing: 2px; }
-    .group-card h3 { margin: 12px 0 16px; color: var(--gold); font: 700 22px var(--sans); }
-    .group-card p { margin: 0 0 14px; color: #f3e5dc; font-size: 15px; line-height: 1.7; }
-    .group-card strong { color: var(--white); }
-    .promise { max-width: 850px; margin: 25px auto 0; padding: 22px; border: 1px solid var(--gold); border-radius: 12px; background: #39251c; color: #f3e5dc; }
-    .promise strong { color: var(--gold); font-size: 19px; }
+    .group-card { padding: 30px 24px; border: 1px solid #b47b5a; border-radius: 15px; background: #7a4a38; box-shadow: inset 0 1px rgba(255,248,235,.12); }
+    .group-number { color: #ffd976; font: 900 13px var(--sans); letter-spacing: 2px; }
+    .group-card h3 { margin: 12px 0 16px; color: #ffd976; font: 700 22px var(--sans); }
+    .group-card p { margin: 0 0 14px; color: #fff8ed; font-size: 15px; line-height: 1.7; }
+    .group-card strong { color: #fffaf3; }
+    .promise { max-width: 850px; margin: 25px auto 0; padding: 22px; border: 1px solid #e2bd61; border-radius: 12px; background: #694735; color: #fff8ed; }
+    .promise strong { color: #ffd976; font-size: 19px; }
     .preview-section { background: var(--cream); }
     .mailbox { max-width: 790px; margin: 0 auto; overflow: hidden; border: 1px solid #d6c4b8; border-radius: 14px; background: var(--white); box-shadow: 0 18px 50px rgba(74,33,24,.14); text-align: left; }
     .mail-toolbar { display: flex; align-items: center; gap: 7px; padding: 13px 18px; border-bottom: 1px solid #e6ddd6; background: #f4eee9; font: 13px var(--sans); }
@@ -236,12 +236,10 @@
   <footer class="page-footer">Chocolaterie Stam · Ames, Iowa</footer>
 
   <script>
-    // Front-end demo only: connect this form to an email service to store signups
-    // and send the real double opt-in confirmation message.
     const signupForm = document.getElementById('signup-form');
     const signupStatus = document.getElementById('signup-status');
     signupForm.addEventListener('submit', (event) => {
-      event.preventDefault();
+      event.preventEvent();
       if (!signupForm.reportValidity()) return;
       const firstName = document.getElementById('first-name').value.trim();
       signupStatus.textContent = firstName
