@@ -69,7 +69,7 @@
     .promise { max-width: 850px; margin: 25px auto 0; padding: 22px; border: 1px solid #e2bd61; border-radius: 12px; background: #694735; color: #fff8ed; }
     .promise strong { color: #ffd976; font-size: 19px; }
     .preview-section { background: var(--cream); }
-    .mailbox { max-width: 790px; margin: 0 auto; overflow: hidden; border: 1px solid #d6c4b8; border-radius: 14px; background: var(--white); box-shadow: 0 18px 50px rgba(74,33,24,.14); text-align: left; }
+    .mailbox { max-width: 790px; margin: 0 auto; overflow: hidden; border: 1px solid #d6c4b8; border-radius: 14px; background: var(--white); box-shadow: 0 18px 50px rgba(74,33,24,.14); text-align:left; }
     .mail-toolbar { display: flex; align-items: center; gap: 7px; padding: 13px 18px; border-bottom: 1px solid #e6ddd6; background: #f4eee9; font: 13px var(--sans); }
     .dot { width: 9px; height: 9px; border-radius: 50%; background: #d6bfb0; }
     .mail-label { margin-left: auto; color: var(--muted); }
@@ -81,6 +81,8 @@
     .email-brand .logo span { color: var(--accent-rose); }
     .email-content h3 { margin: 8px 0 20px; color: var(--chocolate-dark); font-size: clamp(25px, 4vw, 34px); text-align: center; }
     .email-content p { max-width: 570px; margin: 0 auto 17px; color: #4c3a31; font-size: 16px; }
+    .welcome-image-wrap { max-width: 570px; margin: 22px auto 24px; text-align: center; }
+    .welcome-image { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto; border-radius: 12px; box-shadow: 0 10px 28px rgba(74,33,24,.12); }
     .reward-box { max-width: 570px; margin: 24px auto; padding: 20px; border: 1px dashed var(--peach); background: var(--cream); color: var(--chocolate-dark); text-align: center; }
     .reward-box strong { display: block; margin-bottom: 5px; font-size: 20px; }
     .email-cta { margin: 25px 0 12px; text-align: center; }
@@ -133,7 +135,7 @@
         <div class="hero-copy">
           <p class="eyebrow">A little sweetness, just for you</p>
           <h1 id="signup-heading">More to enjoy with Stam rewards.</h1>
-          <p>Join the Chocolaterie Stam community for delicious updates, local offers, rewards system, and a free birthday reward too.
+          <p>Join the Chocolaterie Stam community for delicious updates, local offers, rewards system, and a free birthday reward too.</p>
           <div class="benefit"><strong>Your welcome treat:</strong> In the future, you’ll receive a digital coupon for a free small drink to use on your next visit.</div>
         </div>
         <form class="form-card" id="signup-form">
@@ -151,7 +153,7 @@
             <label for="date-of-birth">Date of birth <span class="field-note">(Optional)</span></label>
             <input id="date-of-birth" name="dateOfBirth" type="date" autocomplete="bday" required>
           </div>
-          <p class="privacy-copy">You’ll receive promotional emails featuring product updates, special offers, and exclusive rewards approximately twice per month. To ensure you only receive emails you want, we use a double opt-in process and require confirmation of your subscription before sending marketing messages. We respect your privacy, will never sell or share your personal information, and every email includes a simple option to unsubscribe at any time.</p>
+          <p class="privacy-copy">You’ll receive promotional emails featuring product updates, special offers, and exclusive rewards approximately twice per month. To ensure you only receive emails you want, we use a double opt-in process and require confirmation of your subscription before sending marketing messages. We respect your privacy, will never sell or share your personal information, and every email includes a simple opt-out option to unsubscribe at any time.</p>
           <button class="button" type="submit">Sign me up for Stam Rewards</button>
           <p class="status" id="signup-status" role="status" aria-live="polite"></p>
         </form>
@@ -194,7 +196,7 @@
       <div class="wrap">
         <p class="eyebrow">A note from Stam</p>
         <h2 class="section-title" id="preview-heading">Rewards Program Email Preview</h2>
-   
+
         <article class="mailbox" aria-label="Email preview">
           <div class="mail-toolbar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mail-label">Inbox · Message preview</span></div>
           <div class="mail-meta">
@@ -207,6 +209,7 @@
             <h3>A sweeter kind of welcome.</h3>
             <p>Hi <strong>[First Name],</strong></p>
             <p>You’re officially enrolled in Chocolaterie Stam rewards! Thank you for enrolling today. A free small drink (hot or iced coffee, hot chocolate, and more) is waiting for you on your next visit.</p>
+            <div class="welcome-image-wrap"><img class="welcome-image" src="coffee.png" alt="A warm coffee drink at Chocolaterie Stam"></div>
             <div class="reward-box"><strong>Your welcome treat is coming soon</strong>Look out for your digital coupon for a free small drink to redeem on a future visit.</div>
             <p>And this is just the beginning. Keep visiting and shopping with us to move up in our loyalty rewards program and enjoy even more reasons to treat yourself.</p>
             <div class="email-cta"><a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Chocolaterie+Stam+230+Main+St+Ames+IA+50010" target="_blank" rel="noopener noreferrer">Plan your visit</a></div>
@@ -235,7 +238,7 @@
     const signupForm = document.getElementById('signup-form');
     const signupStatus = document.getElementById('signup-status');
     signupForm.addEventListener('submit', (event) => {
-      event.preventDefault();
+      event.preventEvent();
       if (!signupForm.reportValidity()) return;
       const firstName = document.getElementById('first-name').value.trim();
       signupStatus.textContent = firstName
