@@ -82,7 +82,7 @@
     .email-content h3 { margin: 8px 0 20px; color: var(--chocolate-dark); font-size: clamp(25px, 4vw, 34px); text-align: center; }
     .email-content p { max-width: 570px; margin: 0 auto 17px; color: #4c3a31; font-size: 16px; }
     .welcome-image-wrap { max-width: 570px; margin: 22px auto 24px; text-align: center; }
-    .welcome-image { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto; border-radius: 12px; box-shadow: 0 10px 28px rgba(74,33,24,.12); }
+    .welcome-image { display: block; width: 100%; max-width: 340px; height: auto; margin: 0 auto; border-radius: 12px; box-shadow: 0 10px 28px rgba(74,33,24,.12); }
     .reward-box { max-width: 570px; margin: 24px auto; padding: 20px; border: 1px dashed var(--peach); background: var(--cream); color: var(--chocolate-dark); text-align: center; }
     .reward-box strong { display: block; margin-bottom: 5px; font-size: 20px; }
     .email-cta { margin: 25px 0 12px; text-align: center; }
@@ -113,6 +113,7 @@
       .section { padding: 65px 18px; }
       .mail-meta, .email-content { padding-left: 19px; padding-right: 19px; }
       .email-footer { padding-left: 18px; padding-right: 18px; }
+      .welcome-image { max-width: 280px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
   </style>
@@ -238,7 +239,7 @@
     const signupForm = document.getElementById('signup-form');
     const signupStatus = document.getElementById('signup-status');
     signupForm.addEventListener('submit', (event) => {
-      event.preventEvent();
+      event.preventDefault();
       if (!signupForm.reportValidity()) return;
       const firstName = document.getElementById('first-name').value.trim();
       signupStatus.textContent = firstName
