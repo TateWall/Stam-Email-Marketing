@@ -8,17 +8,10 @@
   <title>Chocolaterie Stam | Email Marketing</title>
   <style>
     :root {
-      --gold: #d4af37;
-      --cream: #fdf1e8;
-      --chocolate-dark: #2c1a14;
-      --chocolate-light: #4a2118;
-      --white: #fff;
-      --accent-rose: #861d1b;
-      --peach: #d9956b;
-      --line: #e9d8ca;
-      --muted: #71594e;
-      --serif: Georgia, 'Times New Roman', serif;
-      --sans: Arial, Helvetica, sans-serif;
+      --gold: #d4af37; --cream: #fdf1e8; --chocolate-dark: #2c1a14;
+      --chocolate-light: #4a2118; --white: #fff; --accent-rose: #861d1b;
+      --peach: #d9956b; --line: #e9d8ca; --muted: #71594e;
+      --serif: Georgia, 'Times New Roman', serif; --sans: Arial, Helvetica, sans-serif;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -34,6 +27,7 @@
     .hero { min-height: 570px; display: flex; align-items: center; justify-content: center; padding: 75px 20px; text-align: center; background: radial-gradient(ellipse at top, #f8d9c8, var(--cream) 70%); }
     .hero-content { width: min(1050px, 100%); display: grid; grid-template-columns: 1fr .9fr; align-items: center; gap: clamp(30px, 6vw, 75px); text-align: left; }
     .hero-copy { max-width: 520px; padding: 12px; }
+    .hero-decoration { display: block; width: 108px; max-width: 30%; height: auto; margin: 0 0 12px; }
     .eyebrow { color: var(--accent-rose); font: 900 13px var(--sans); letter-spacing: 2.5px; text-transform: uppercase; }
     h1, h2, h3 { font-family: var(--serif); line-height: 1.15; }
     h1 { margin: 20px 0; color: var(--chocolate-dark); font-size: clamp(38px, 5.5vw, 66px); font-weight: 900; }
@@ -69,7 +63,7 @@
     .promise { max-width: 850px; margin: 25px auto 0; padding: 22px; border: 1px solid #e2bd61; border-radius: 12px; background: #694735; color: #fff8ed; }
     .promise strong { color: #ffd976; font-size: 19px; }
     .preview-section { background: var(--cream); }
-    .mailbox { max-width: 790px; margin: 0 auto; overflow: hidden; border: 1px solid #d6c4b8; border-radius: 14px; background: var(--white); box-shadow: 0 18px 50px rgba(74,33,24,.14); text-align:left; }
+    .mailbox { max-width: 790px; margin: 0 auto; overflow: hidden; border: 1px solid #d6c4b8; border-radius: 14px; background: var(--white); box-shadow: 0 18px 50px rgba(74,33,24,.14); text-align: left; }
     .mail-toolbar { display: flex; align-items: center; gap: 7px; padding: 13px 18px; border-bottom: 1px solid #e6ddd6; background: #f4eee9; font: 13px var(--sans); }
     .dot { width: 9px; height: 9px; border-radius: 50%; background: #d6bfb0; }
     .mail-label { margin-left: auto; color: var(--muted); }
@@ -101,11 +95,7 @@
     .footer-links a { margin: 0 5px; color: var(--gold); }
     .small-print { max-width: 580px; margin: 12px auto 0; color: #cbb5a7; font: 12px/1.6 var(--sans); }
     .page-footer { padding: 24px 20px; background: var(--chocolate-dark); color: #e3c9b9; text-align: center; font: 13px var(--sans); }
-    @media (max-width: 800px) {
-      .hero-content { grid-template-columns: 1fr; gap: 20px; }
-      .hero-copy { text-align: center; }
-      .groups { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 800px) { .hero-content { grid-template-columns: 1fr; gap: 20px; } .hero-copy { text-align: center; } .hero-decoration { margin-left: auto; margin-right: auto; } .groups { grid-template-columns: 1fr; } }
     @media (max-width: 750px) {
       .topbar { justify-content: center; text-align: center; }
       .nav-links { justify-content: center; gap: 14px; }
@@ -122,18 +112,14 @@
   <header class="topbar">
     <a href="index.html" class="logo" aria-label="Chocolaterie Stam home">CHOCOLATERIE <span>STAM</span></a>
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html">HOME</a>
-      <a href="index.html#treats">OUR TREATS</a>
-      <a href="email.html" aria-current="page">EMAIL MARKETING</a>
-      <a href="index.html#family">OUR STORY</a>
-      <a href="index.html#location">FIND US</a>
+      <a href="index.html">HOME</a><a href="index.html#treats">OUR TREATS</a><a href="email.html" aria-current="page">EMAIL MARKETING</a><a href="index.html#family">OUR STORY</a><a href="index.html#location">FIND US</a>
     </nav>
   </header>
-
   <main>
     <section class="hero" id="top" aria-labelledby="signup-heading">
       <div class="hero-content">
         <div class="hero-copy">
+          <img class="hero-decoration" src="chocolates.png" alt="" aria-hidden="true">
           <p class="eyebrow">A little sweetness, just for you</p>
           <h1 id="signup-heading">More to enjoy with Stam rewards.</h1>
           <p>Join the Chocolaterie Stam community for delicious updates, local offers, rewards system, and a free birthday reward too.</p>
@@ -142,69 +128,34 @@
         <form class="form-card" id="signup-form">
           <h2>Get the good stuff</h2>
           <p class="form-intro">A few details, then a little treat from us.</p>
-          <div class="field">
-            <label for="email">Email address <span class="field-note">(Required)</span></label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-          </div>
-          <div class="field">
-            <label for="first-name">First name <span class="field-note">(Required)</span></label>
-            <input id="first-name" name="firstName" type="text" autocomplete="given-name" placeholder="Your first name">
-          </div>
-          <div class="field">
-            <label for="date-of-birth">Date of birth <span class="field-note">(Optional)</span></label>
-            <input id="date-of-birth" name="dateOfBirth" type="date" autocomplete="bday" required>
-          </div>
+          <div class="field"><label for="email">Email address <span class="field-note">(Required)</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+          <div class="field"><label for="first-name">First name <span class="field-note">(Required)</span></label><input id="first-name" name="firstName" type="text" autocomplete="given-name" placeholder="Your first name"></div>
+          <div class="field"><label for="date-of-birth">Date of birth <span class="field-note">(Optional)</span></label><input id="date-of-birth" name="dateOfBirth" type="date" autocomplete="bday" required></div>
           <p class="privacy-copy">You’ll receive promotional emails featuring product updates, special offers, and exclusive rewards approximately twice per month. To ensure you only receive emails you want, we use a double opt-in process and require confirmation of your subscription before sending marketing messages. We respect your privacy, will never sell or share your personal information, and every email includes a simple opt-out option to unsubscribe at any time.</p>
           <button class="button" type="submit">Sign me up for Stam Rewards</button>
           <p class="status" id="signup-status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
-
     <section class="section strategy-section" id="strategy" aria-labelledby="strategy-heading">
       <div class="wrap">
         <p class="eyebrow">Made for our Ames community</p>
         <h2 class="section-title" id="strategy-heading">How we grow the Stam family</h2>
         <p class="section-description">We meet people where they are, offer a little something worth sharing an email for, and keep showing up with rewards they’ll love.</p>
         <div class="groups">
-          <article class="group-card">
-            <span class="group-number">01 · IN-STORE</span>
-            <h3>Our In-Store Regulars</h3>
-            <p><strong>Where &amp; How:</strong> At the in-store POS, a cashier invites customers to join by email while checking out.</p>
-            <p><strong>Immediate Value:</strong> A digital coupon for a free small drink to use on their next visit.</p>
-            <p><strong>Why Stay:</strong> A loyalty rewards program with rewards that rank up as customers visit and purchase more often.</p>
-          </article>
-          <article class="group-card">
-            <span class="group-number">02 · CAMPUS</span>
-            <h3>Busy Iowa State Students</h3>
-            <p><strong>Where &amp; How:</strong> Reach students around Ames with signup flyers and QR codes on campus, supported by word-of-mouth advertising.</p>
-            <p><strong>Immediate Value:</strong> A digital coupon for a free small drink on their next visit—an easy study-break treat.</p>
-            <p><strong>Why Stay:</strong> Frequent visits and purchases help members move up through more rewarding loyalty tiers.</p>
-          </article>
-          <article class="group-card">
-            <span class="group-number">03 · SHOP LOCAL</span>
-            <h3>Shop-Local Advocates</h3>
-            <p><strong>Where &amp; How:</strong> Paid social media ads on Instagram and TikTok introduce the Ames shop and direct local shoppers to sign up.</p>
-            <p><strong>Immediate Value:</strong> A digital coupon for a free small drink to redeem on a future visit.</p>
-            <p><strong>Why Stay:</strong> A local loyalty program that recognizes frequent purchases and visits with increasingly valuable rewards.</p>
-          </article>
+          <article class="group-card"><span class="group-number">01 · IN-STORE</span><h3>Our In-Store Regulars</h3><p><strong>Where &amp; How:</strong> At the in-store POS, a cashier invites customers to join by email while checking out.</p><p><strong>Immediate Value:</strong> A digital coupon for a free small drink to use on their next visit.</p><p><strong>Why Stay:</strong> A loyalty rewards program with rewards that rank up as customers visit and purchase more often.</p></article>
+          <article class="group-card"><span class="group-number">02 · CAMPUS</span><h3>Busy Iowa State Students</h3><p><strong>Where &amp; How:</strong> Reach students around Ames with signup flyers and QR codes on campus, supported by word-of-mouth advertising.</p><p><strong>Immediate Value:</strong> A digital coupon for a free small drink on their next visit—an easy study-break treat.</p><p><strong>Why Stay:</strong> Frequent visits and purchases help members move up through more rewarding loyalty tiers.</p></article>
+          <article class="group-card"><span class="group-number">03 · SHOP LOCAL</span><h3>Shop-Local Advocates</h3><p><strong>Where &amp; How:</strong> Paid social media ads on Instagram and TikTok introduce the Ames shop and direct local shoppers to sign up.</p><p><strong>Immediate Value:</strong> A digital coupon for a free small drink to redeem on a future visit.</p><p><strong>Why Stay:</strong> A local loyalty program that recognizes frequent purchases and visits with increasingly valuable rewards.</p></article>
         </div>
         <div class="promise"><strong>One sweet welcome. More reasons to come back.</strong><br>Members get a free small drink digital coupon for a future visit, then can unlock higher-ranked rewards through frequent purchases and visits.</div>
       </div>
     </section>
-
     <section class="section preview-section" id="preview" aria-labelledby="preview-heading">
       <div class="wrap">
-        <p class="eyebrow">A note from Stam</p>
-        <h2 class="section-title" id="preview-heading">Rewards Program Email Preview</h2>
-
+        <p class="eyebrow">A note from Stam</p><h2 class="section-title" id="preview-heading">Rewards Program Email Preview</h2>
         <article class="mailbox" aria-label="Email preview">
           <div class="mail-toolbar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mail-label">Inbox · Message preview</span></div>
-          <div class="mail-meta">
-            <div><span class="meta-label">From</span><strong>Chocolaterie Stam Ames</strong> &lt;terry@stamchocolate.com&gt;</div>
-            <div><span class="meta-label">To</span>you@example.com</div>
-            <div><span class="meta-label">Subject</span><strong> 🎉 Welcome to Chocolaterie Stam Rewards! </strong></div>
-          </div>
+          <div class="mail-meta"><div><span class="meta-label">From</span><strong>Chocolaterie Stam Ames</strong> &lt;terry@stamchocolate.com&gt;</div><div><span class="meta-label">To</span>you@example.com</div><div><span class="meta-label">Subject</span><strong> 🎉 Welcome to Chocolaterie Stam Rewards! </strong></div></div>
           <div class="email-content">
             <div class="email-brand"><a href="index.html" class="logo" aria-label="Chocolaterie Stam">CHOCOLATERIE <span>STAM</span></a></div>
             <h3>A sweeter kind of welcome.</h3>
@@ -217,14 +168,8 @@
             <p class="landing-note">CTA landing page: Chocolaterie Stam Ames directions on Google Maps.</p>
           </div>
           <footer class="email-footer">
-            <img class="footer-logo" src="stams-logo.png" alt="Chocolaterie Stam logo">
-            <div class="footer-brand">CHOCOLATERIE <span>STAM</span></div>
-            <p class="tagline">Welcome to wonderful!</p>
-            <div class="socials" aria-label="Social media links">
-              <a href="https://www.instagram.com/chocolateriestamames/?hl=en/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎ Instagram</a>
-              <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">♪ TikTok</a>
-              <a href="https://www.facebook.com/amesstam/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f Facebook</a>
-            </div>
+            <img class="footer-logo" src="stams-logo.png" alt="Chocolaterie Stam logo"><div class="footer-brand">CHOCOLATERIE <span>STAM</span></div><p class="tagline">Welcome to wonderful!</p>
+            <div class="socials" aria-label="Social media links"><a href="https://www.instagram.com/chocolateriestamames/?hl=en/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎ Instagram</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">♪ TikTok</a><a href="https://www.facebook.com/amesstam/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">f Facebook</a></div>
             <p class="contact">230 Main St, Ames, IA 50010<br>Need help? Come visit the store or call us at <a href="tel:+15152320656">(515) 232-0656</a> during our standard business hours.</p>
             <p class="footer-links"><a href="#privacy">Privacy Policy</a> · <a href="#share">Share with a friend to earn rewards even faster.</a> · <a href="#unsubscribe">Unsubscribe</a></p>
             <p class="small-print">You’re receiving this email because you signed up for Chocolaterie Stam updates and rewards. You can unsubscribe at any time using the link above.</p>
@@ -234,7 +179,6 @@
     </section>
   </main>
   <footer class="page-footer">Chocolaterie Stam · Ames, Iowa</footer>
-
   <script>
     const signupForm = document.getElementById('signup-form');
     const signupStatus = document.getElementById('signup-status');
