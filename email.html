@@ -26,11 +26,11 @@
     .wrap { width: min(1100px, 92%); margin: 0 auto; }
     .hero { min-height: 570px; display: flex; align-items: center; justify-content: center; padding: 75px 20px; text-align: center; background: radial-gradient(ellipse at top, #f8d9c8, var(--cream) 70%); }
     .hero-content { width: min(1050px, 100%); display: grid; grid-template-columns: 1fr .9fr; align-items: center; gap: clamp(30px, 6vw, 75px); text-align: left; }
-    .hero-copy { max-width: 520px; padding: 12px; }
-    .hero-decoration { display: block; width: 140px; max-width: 38%; height: auto; margin: 0 0 12px; transform: rotate(-8deg); transform-origin: center; }
-    .eyebrow { color: var(--accent-rose); font: 900 13px var(--sans); letter-spacing: 2.5px; text-transform: uppercase; }
+    .hero-copy { position: relative; max-width: 520px; padding: 12px; }
+    .hero-decoration { position: absolute; z-index: 0; width: 140px; max-width: 38%; height: auto; left: -95px; top: -54px; transform: rotate(-8deg); transform-origin: center; }
+    .eyebrow { position: relative; z-index: 1; color: var(--accent-rose); font: 900 13px var(--sans); letter-spacing: 2.5px; text-transform: uppercase; }
     h1, h2, h3 { font-family: var(--serif); line-height: 1.15; }
-    h1 { margin: 20px 0; color: var(--chocolate-dark); font-size: clamp(38px, 5.5vw, 66px); font-weight: 900; }
+    h1 { position: relative; z-index: 1; margin: 20px 0; color: var(--chocolate-dark); font-size: clamp(38px, 5.5vw, 66px); font-weight: 900; }
     .hero-copy > p:not(.eyebrow) { color: var(--chocolate-light); font-size: 19px; line-height: 1.7; }
     .benefit { margin-top: 25px; padding: 17px 20px; border-left: 4px solid var(--gold); background: rgba(255,255,255,.55); color: var(--chocolate-dark); font-size: 16px; }
     .form-card { padding: clamp(25px, 4vw, 40px); border: 2px solid #d6a17f; border-radius: 16px; background: rgba(255,255,255,.78); box-shadow: 0 18px 50px rgba(74,33,24,.12); }
@@ -95,7 +95,12 @@
     .footer-links a { margin: 0 5px; color: var(--gold); }
     .small-print { max-width: 580px; margin: 12px auto 0; color: #cbb5a7; font: 12px/1.6 var(--sans); }
     .page-footer { padding: 24px 20px; background: var(--chocolate-dark); color: #e3c9b9; text-align: center; font: 13px var(--sans); }
-    @media (max-width: 800px) { .hero-content { grid-template-columns: 1fr; gap: 20px; } .hero-copy { text-align: center; } .hero-decoration { margin-left: auto; margin-right: auto; } .groups { grid-template-columns: 1fr; } }
+    @media (max-width: 800px) {
+      .hero-content { grid-template-columns: 1fr; gap: 20px; }
+      .hero-copy { text-align: center; }
+      .hero-decoration { width: 105px; max-width: 30%; left: 0; top: -50px; }
+      .groups { grid-template-columns: 1fr; }
+    }
     @media (max-width: 750px) {
       .topbar { justify-content: center; text-align: center; }
       .nav-links { justify-content: center; gap: 14px; }
