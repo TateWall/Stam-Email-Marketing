@@ -1,1 +1,117 @@
-Oops
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2c1a14">
+  <title>Welcome to Chocolaterie Stam Rewards</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --chocolate: #2c1a14;
+      --cream: #fdf1e8;
+      --gold: #d4af37;
+      --rose: #861d1b;
+      --muted: #71594e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px 16px;
+      background: var(--cream);
+      color: var(--chocolate);
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.65;
+    }
+    .email {
+      max-width: 640px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid #e9d8ca;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 18px 50px rgba(74, 33, 24, .12);
+    }
+    .brand {
+      padding: 28px 20px 8px;
+      color: var(--chocolate);
+      font: 900 21px Arial, Helvetica, sans-serif;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    .brand span { color: var(--rose); }
+    .content { padding: 12px 32px 34px; }
+    h1 {
+      margin: 8px 0 22px;
+      font-size: clamp(28px, 5vw, 36px);
+      line-height: 1.15;
+      text-align: center;
+    }
+    p { margin: 0 0 17px; color: #4c3a31; }
+    .welcome-images {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(10px, 3vw, 24px);
+      max-width: 520px;
+      margin: 26px auto;
+    }
+    .welcome-images img {
+      display: block;
+      height: auto;
+      object-fit: contain;
+    }
+    .coffee-image {
+      width: min(52%, 260px);
+      border-radius: 12px;
+      box-shadow: 0 10px 28px rgba(74, 33, 24, .12);
+    }
+    .chocolate-image { width: min(19%, 92px); }
+    .reward {
+      margin: 24px 0;
+      padding: 20px;
+      border: 1px dashed #d9956b;
+      background: var(--cream);
+      text-align: center;
+    }
+    .reward strong { display: block; margin-bottom: 5px; font-size: 19px; }
+    .footer {
+      padding: 24px;
+      background: var(--chocolate);
+      color: #fff;
+      font: 13px/1.7 Arial, Helvetica, sans-serif;
+      text-align: center;
+    }
+    .footer p { margin: 0; color: #e3c9b9; }
+    .tagline { margin-bottom: 8px !important; color: var(--gold) !important; font: italic 16px Georgia, 'Times New Roman', serif; }
+    @media (max-width: 480px) {
+      body { padding: 16px 10px; }
+      .content { padding: 10px 20px 28px; }
+      .welcome-images { gap: 10px; }
+      .chocolate-image { width: 18%; }
+      .coffee-image { width: 56%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="email" aria-label="Chocolaterie Stam welcome email">
+    <header class="brand">CHOCOLATERIE <span>STAM</span></header>
+    <section class="content">
+      <h1>A sweeter kind of welcome.</h1>
+      <p>Hi <strong>[First Name],</strong></p>
+      <p>You’re officially enrolled in Chocolaterie Stam rewards! Thank you for joining us. A free small drink (hot or iced coffee, hot chocolate, and more) is waiting for you on your next visit.</p>
+      <div class="welcome-images" role="group" aria-label="Coffee and Chocolaterie Stam chocolates">
+        <img class="chocolate-image" src="chocolates.png" alt="Chocolates from Chocolaterie Stam">
+        <img class="coffee-image" src="coffee.png" alt="A warm coffee drink at Chocolaterie Stam">
+        <img class="chocolate-image" src="chocolates.png" alt="">
+      </div>
+      <div class="reward"><strong>Your welcome treat is coming soon</strong>Look out for your digital coupon for a free small drink to redeem on a future visit.</div>
+      <p>And this is just the beginning. Keep visiting and shopping with us to move up in our loyalty rewards program and enjoy even more reasons to treat yourself.</p>
+    </section>
+    <footer class="footer">
+      <p class="tagline">Welcome to wonderful!</p>
+      <p>Chocolaterie Stam · 230 Main St, Ames, IA 50010</p>
+    </footer>
+  </main>
+</body>
+</html>
